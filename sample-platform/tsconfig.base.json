@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+    "paths": {
+      "@sample/shared-pricing": ["./packages/shared-pricing/src"],
+      "@sample/shared-pricing/*": ["./packages/shared-pricing/src/*"]
+    }
+  }
+}

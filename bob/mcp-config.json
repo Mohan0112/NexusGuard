@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "nexusguard": {
+      "command": "node",
+      "args": ["packages/mcp-server/dist/index.js"],
+      "env": {
+        "BOB_API_KEY": "${BOB_API_KEY}"
+      }
+    }
+  }
+}

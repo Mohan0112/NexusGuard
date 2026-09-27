@@ -1,0 +1,17 @@
+{
+  "id": "N04",
+  "description": "Comments and whitespace only — no LLM call, COSMETIC_ONLY fast path.",
+  "category": "negative",
+  "expectedOracle": null,
+  "expected": {
+    "candidatesMustInclude": [],
+    "candidatesMustExclude": [],
+    "findings": [],
+    "noFindingsFor": [
+      "@sample/billing-service",
+      "@sample/checkout-service",
+      "@sample/notification-service"
+    ],
+    "noLlmCall": true
+  }
+}

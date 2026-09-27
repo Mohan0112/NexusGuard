@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "paths": {
+      "@nexusguard/core": ["../core/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*"],
+  "references": [{ "path": "../core" }]
+}

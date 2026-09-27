@@ -1,0 +1,24 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploys the NexusGuard dashboard as a Node web service.
+services:
+  - type: web
+    name: nexusguard-dashboard
+    runtime: node
+    plan: free
+    # devDependencies (typescript, tailwind) are needed at build time even with NODE_ENV=production
+    buildCommand: npm ci --include=dev && npm run build -w packages/core && npm run build -w packages/dashboard
+    startCommand: cd packages/dashboard && npx next start -p $PORT
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22.12.0"
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      # Public deployment: the UI is viewable, live analysis is locked.
+      # Only enable together with NEXUSGUARD_ALLOWED_REPOS and a Bob Shell install.
+      - key: NEXUSGUARD_ENABLE_ANALYZE
+        value: "false"
+      - key: BOB_API_KEY
+        sync: false # set in the Render dashboard, never in this file

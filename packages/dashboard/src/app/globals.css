@@ -1,0 +1,24 @@
+/* packages/dashboard/src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #1f2328;
+  --background: #ffffff;
+  --surface: #f7f8fa;
+  --border: #e5e7eb;
+  --muted: #57606a;
+  --accent: #3b82d4;
+  --broken: #ef4444;
+  --at-risk: #f59e0b;
+  --safe: #22c55e;
+  --uncertain: #a855f7;
+  --modified: #f97316;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+}

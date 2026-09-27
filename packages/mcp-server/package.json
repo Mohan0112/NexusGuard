@@ -1,0 +1,19 @@
+{
+  "name": "@nexusguard/mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@nexusguard/core": "*",
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^22.10.0"
+  }
+}

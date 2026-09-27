@@ -1,0 +1,24 @@
+{
+  "id": "S01",
+  "description": "calculateFee returns cents instead of dollars (same signature). tsc passes.",
+  "category": "semantic",
+  "expectedOracle": "test",
+  "expected": {
+    "candidatesMustInclude": ["@sample/billing-service", "@sample/notification-service"],
+    "candidatesMustExclude": ["@sample/checkout-service"],
+    "findings": [
+      {
+        "service": "@sample/billing-service",
+        "verdictIn": ["BROKEN"],
+        "severityAtLeast": "HIGH",
+        "confirmationIn": ["CONFIRMED_BY_TEST", "LLM_GROUNDED"]
+      },
+      {
+        "service": "@sample/notification-service",
+        "verdictIn": ["AT_RISK", "BROKEN", "UNCERTAIN"]
+      }
+    ],
+    "noFindingsFor": ["@sample/checkout-service"],
+    "heal": { "shouldSucceed": true, "maxAttempts": 3 }
+  }
+}

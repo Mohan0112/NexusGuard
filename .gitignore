@@ -1,0 +1,54 @@
+# ── Dependencies ─────────────────────────────────────────────
+node_modules/
+
+# ── Build output ─────────────────────────────────────────────
+dist/
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# ── NexusGuard run artifacts ─────────────────────────────────
+# Run stores hold full prompts, raw LLM output and code snippets
+# from whatever repo was analyzed — never publish them.
+.nexusguard/
+worktrees/
+*.prompt.txt
+*.raw.txt
+
+# ── Secrets & local config ───────────────────────────────────
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa*
+id_ed25519*
+credentials*.json
+service-account*.json
+bob/*.local.json
+bob/*.local.md
+
+# ── Tests, logs, coverage ────────────────────────────────────
+coverage/
+*.log
+npm-debug.log*
+.vitest-cache/
+
+# ── Editors & OS ─────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Deploy tooling ───────────────────────────────────────────
+.vercel/
+.render/

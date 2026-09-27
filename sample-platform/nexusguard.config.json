@@ -1,0 +1,33 @@
+{
+  "services": {
+    "@sample/shared-pricing":       { "tier": 1 },
+    "@sample/billing-service":      { "tier": 1 },
+    "@sample/checkout-service":     { "tier": 1 },
+    "@sample/notification-service": { "tier": 2 }
+  },
+  "commands": {
+    "typecheck": ["npx", "tsc", "-b", "--pretty", "false"],
+    "test": {
+      "@sample/billing-service":      ["npx", "vitest", "run", "--reporter=json", "--root", "services/billing-service"],
+      "@sample/checkout-service":     ["npx", "vitest", "run", "--reporter=json", "--root", "services/checkout-service"],
+      "@sample/notification-service": ["npx", "vitest", "run", "--reporter=json", "--root", "services/notification-service"],
+      "@sample/shared-pricing":       ["npx", "vitest", "run", "--reporter=json", "--root", "packages/shared-pricing"]
+    }
+  },
+  "limits": {
+    "maxDiffLines": 2000,
+    "maxCandidates": 40,
+    "maxServiceHops": 3,
+    "maxCharsPerCall": 40000,
+    "maxLLMCallsPerRun": 8,
+    "maxAttempts": 3,
+    "maxChangedLinesPerAttempt": 30,
+    "maxFilesPerAttempt": 5
+  },
+  "timeouts": {
+    "llmMs": 60000,
+    "typecheckMs": 60000,
+    "testMs": 120000,
+    "attemptMs": 90000
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "@sample/billing-service",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": { "@sample/shared-pricing": "*" }
+}

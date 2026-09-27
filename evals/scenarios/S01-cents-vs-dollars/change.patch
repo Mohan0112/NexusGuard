@@ -1,0 +1,19 @@
+# S01: calculateFee returns cents instead of dollars (same signature)
+# Apply this patch over main → creates the "break" head commit
+--- a/packages/shared-pricing/src/fees.ts
++++ b/packages/shared-pricing/src/fees.ts
+@@ -6,8 +6,8 @@
+ export type CurrencyCode = "USD" | "EUR" | "INR";
+ 
+ /**
+- * Processing fee for an order amount, in dollars.
+- * @param amount - The order subtotal in dollars
+- * @returns The processing fee in dollars
++ * Processing fee in integer cents (avoids float drift).
++ * @param amount - The order subtotal in dollars
++ * @returns The processing fee in INTEGER CENTS (e.g., $100 → 320 cents)
+  */
+ export function calculateFee(amount: number): number {
+-  return Math.round((amount * 0.029 + 0.3) * 100) / 100;
++  return Math.round(amount * 2.9 + 30);  // 100 → 320 (cents)
+ }

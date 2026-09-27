@@ -1,0 +1,23 @@
+{
+  "name": "@nexusguard/cli",
+  "version": "0.1.0",
+  "private": true,
+  "bin": {
+    "nexusguard": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "analyze": "node dist/index.js analyze",
+    "eval": "node dist/index.js eval"
+  },
+  "dependencies": {
+    "@nexusguard/core": "*",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^22.10.0"
+  }
+}

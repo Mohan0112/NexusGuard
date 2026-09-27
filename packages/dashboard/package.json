@@ -1,0 +1,29 @@
+{
+  "name": "@nexusguard/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nexusguard/core": "*",
+    "dagre": "^0.8.5",
+    "next": "^15.5.26",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "reactflow": "^11.11.4",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.5",
+    "typescript": "^5.4.5"
+  }
+}
